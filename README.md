@@ -1,0 +1,1 @@
+Programa para emitir reportes de estado financieros, gestiona la presentación de los reportes, así como distribución de montos a visualizar

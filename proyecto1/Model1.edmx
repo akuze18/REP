@@ -1,0 +1,1322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EFINModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="EFINModelStoreContainer">
+          <EntitySet Name="REP_COLUMNAS" EntityType="EFINModel.Store.REP_COLUMNAS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REP_COMP_FILA" EntityType="EFINModel.Store.REP_COMP_FILA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REP_DISTRIBxFILA" EntityType="EFINModel.Store.REP_DISTRIBxFILA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REP_DISTRIBxSECTOR" EntityType="EFINModel.Store.REP_DISTRIBxSECTOR" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REP_FILAS_REPORTE" EntityType="EFINModel.Store.REP_FILAS_REPORTE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REP_INDICE_CUENTAS" EntityType="EFINModel.Store.REP_INDICE_CUENTAS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REP_PERIODO_DISTRIB" EntityType="EFINModel.Store.REP_PERIODO_DISTRIB" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REP_REGLA_CLASIFICACION" EntityType="EFINModel.Store.REP_REGLA_CLASIFICACION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REP_REGLA_COLUMNA" EntityType="EFINModel.Store.REP_REGLA_COLUMNA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REP_SECTORES" EntityType="EFINModel.Store.REP_SECTORES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REP_TIPO_DISTRIBUCION" EntityType="EFINModel.Store.REP_TIPO_DISTRIBUCION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REP_TIPO_REPORTE" EntityType="EFINModel.Store.REP_TIPO_REPORTE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REP_VISTAS" EntityType="EFINModel.Store.REP_VISTAS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REP_VISTAxPRESENT" EntityType="EFINModel.Store.REP_VISTAxPRESENT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VAL_APLICA" EntityType="EFINModel.Store.VAL_APLICA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VAL_PRESENTACIONES" EntityType="EFINModel.Store.VAL_PRESENTACIONES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VAL_TIPO" EntityType="EFINModel.Store.VAL_TIPO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VAL_TIPO_CLASIF" EntityType="EFINModel.Store.VAL_TIPO_CLASIF" store:Type="Tables" store:Schema="dbo" store:Name="VAL_TIPO_CLASIF">
+            <DefiningQuery>SELECT 
+      [VAL_TIPO_CLASIF].[ID] AS [ID], 
+      [VAL_TIPO_CLASIF].[COD] AS [COD], 
+      [VAL_TIPO_CLASIF].[TXT] AS [TXT]
+      FROM [dbo].[VAL_TIPO_CLASIF] AS [VAL_TIPO_CLASIF]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__REP_COLUM__VISTA__09A971A2" Association="EFINModel.Store.FK__REP_COLUM__VISTA__09A971A2">
+            <End Role="REP_VISTAS" EntitySet="REP_VISTAS" />
+            <End Role="REP_COLUMNAS" EntitySet="REP_COLUMNAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_COMP___CUENT__20C1E124" Association="EFINModel.Store.FK__REP_COMP___CUENT__20C1E124">
+            <End Role="REP_INDICE_CUENTAS" EntitySet="REP_INDICE_CUENTAS" />
+            <End Role="REP_COMP_FILA" EntitySet="REP_COMP_FILA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_COMP___FILA___1ED998B2" Association="EFINModel.Store.FK__REP_COMP___FILA___1ED998B2">
+            <End Role="REP_FILAS_REPORTE" EntitySet="REP_FILAS_REPORTE" />
+            <End Role="REP_COMP_FILA" EntitySet="REP_COMP_FILA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_COMP___FILA___1FCDBCEB" Association="EFINModel.Store.FK__REP_COMP___FILA___1FCDBCEB">
+            <End Role="REP_FILAS_REPORTE" EntitySet="REP_FILAS_REPORTE" />
+            <End Role="REP_COMP_FILA" EntitySet="REP_COMP_FILA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_DISTR__DISTR__48CFD27E" Association="EFINModel.Store.FK__REP_DISTR__DISTR__48CFD27E">
+            <End Role="REP_TIPO_DISTRIBUCION" EntitySet="REP_TIPO_DISTRIBUCION" />
+            <End Role="REP_DISTRIBxFILA" EntitySet="REP_DISTRIBxFILA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_DISTR__PERIO__2A164134" Association="EFINModel.Store.FK__REP_DISTR__PERIO__2A164134">
+            <End Role="REP_PERIODO_DISTRIB" EntitySet="REP_PERIODO_DISTRIB" />
+            <End Role="REP_DISTRIBxSECTOR" EntitySet="REP_DISTRIBxSECTOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_DISTR__SECTO__2B0A656D" Association="EFINModel.Store.FK__REP_DISTR__SECTO__2B0A656D">
+            <End Role="REP_SECTORES" EntitySet="REP_SECTORES" />
+            <End Role="REP_DISTRIBxSECTOR" EntitySet="REP_DISTRIBxSECTOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_DISTRI__FILA__47DBAE45" Association="EFINModel.Store.FK__REP_DISTRI__FILA__47DBAE45">
+            <End Role="REP_FILAS_REPORTE" EntitySet="REP_FILAS_REPORTE" />
+            <End Role="REP_DISTRIBxFILA" EntitySet="REP_DISTRIBxFILA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_FILAS__REPOR__145C0A3F" Association="EFINModel.Store.FK__REP_FILAS__REPOR__145C0A3F">
+            <End Role="REP_TIPO_REPORTE" EntitySet="REP_TIPO_REPORTE" />
+            <End Role="REP_FILAS_REPORTE" EntitySet="REP_FILAS_REPORTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_PERIO__DISTR__25518C17" Association="EFINModel.Store.FK__REP_PERIO__DISTR__25518C17">
+            <End Role="REP_TIPO_DISTRIBUCION" EntitySet="REP_TIPO_DISTRIBUCION" />
+            <End Role="REP_PERIODO_DISTRIB" EntitySet="REP_PERIODO_DISTRIB" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_REGLA__COLUM__0E6E26BF" Association="EFINModel.Store.FK__REP_REGLA__COLUM__0E6E26BF">
+            <End Role="REP_COLUMNAS" EntitySet="REP_COLUMNAS" />
+            <End Role="REP_REGLA_COLUMNA" EntitySet="REP_REGLA_COLUMNA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_REGLA__REPOR__37A5467C" Association="EFINModel.Store.FK__REP_REGLA__REPOR__37A5467C">
+            <End Role="REP_TIPO_REPORTE" EntitySet="REP_TIPO_REPORTE" />
+            <End Role="REP_REGLA_CLASIFICACION" EntitySet="REP_REGLA_CLASIFICACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_REGLAS__FILA__38996AB5" Association="EFINModel.Store.FK__REP_REGLAS__FILA__38996AB5">
+            <End Role="REP_FILAS_REPORTE" EntitySet="REP_FILAS_REPORTE" />
+            <End Role="REP_REGLA_CLASIFICACION" EntitySet="REP_REGLA_CLASIFICACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_VISTA__PRESE__2DB1C7EE" Association="EFINModel.Store.FK__REP_VISTA__PRESE__2DB1C7EE">
+            <End Role="VAL_PRESENTACIONES" EntitySet="VAL_PRESENTACIONES" />
+            <End Role="REP_VISTAxPRESENT" EntitySet="REP_VISTAxPRESENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_VISTA__REPOR__7B5B524B" Association="EFINModel.Store.FK__REP_VISTA__REPOR__7B5B524B">
+            <End Role="REP_TIPO_REPORTE" EntitySet="REP_TIPO_REPORTE" />
+            <End Role="REP_VISTAS" EntitySet="REP_VISTAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_VISTA__VISTA__2CBDA3B5" Association="EFINModel.Store.FK__REP_VISTA__VISTA__2CBDA3B5">
+            <End Role="REP_VISTAS" EntitySet="REP_VISTAS" />
+            <End Role="REP_VISTAxPRESENT" EntitySet="REP_VISTAxPRESENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REP_COMP_FILA_REPORTE" Association="EFINModel.Store.FK_REP_COMP_FILA_REPORTE">
+            <End Role="REP_TIPO_REPORTE" EntitySet="REP_TIPO_REPORTE" />
+            <End Role="REP_COMP_FILA" EntitySet="REP_COMP_FILA" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="REP_COLUMNAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VISTA" Type="int" />
+          <Property Name="COD" Type="varchar" MaxLength="10" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="50" />
+          <Property Name="ORDEN" Type="int" />
+          <Property Name="TOTALIZA" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="REP_COMP_FILA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FILA_TOTAL" Type="int" />
+          <Property Name="FILA_COMP" Type="int" />
+          <Property Name="CUENTA_COMP" Type="int" />
+          <Property Name="REPORTE" Type="int" />
+          <Property Name="DESDE" Type="datetime" />
+          <Property Name="HASTA" Type="datetime" />
+        </EntityType>
+        <EntityType Name="REP_DISTRIBxFILA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FILA" Type="int" />
+          <Property Name="DISTRIBUCION" Type="int" />
+        </EntityType>
+        <EntityType Name="REP_DISTRIBxSECTOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SECTOR" Type="int" />
+          <Property Name="PERIODO" Type="int" />
+          <Property Name="VALOR" Type="numeric" Precision="10" Scale="5" />
+        </EntityType>
+        <EntityType Name="REP_FILAS_REPORTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="REPORTE" Type="int" />
+          <Property Name="DESCRIP" Type="varchar" MaxLength="50" />
+          <Property Name="ORDEN" Type="int" />
+          <Property Name="CAMBIAR" Type="bit" />
+          <Property Name="CCODE" Type="varchar" MaxLength="10" />
+          <Property Name="TOTAL_PINTA" Type="int" Nullable="false" />
+          <Property Name="DESCRIP_JP" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="REP_INDICE_CUENTAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="COD_DEPTO" Type="varchar" MaxLength="5" />
+          <Property Name="COD_LUGAR" Type="varchar" MaxLength="5" />
+          <Property Name="COD_GESTN" Type="varchar" MaxLength="5" />
+          <Property Name="NUM_CUENTA" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="REP_PERIODO_DISTRIB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DISTRIB" Type="int" />
+          <Property Name="ACCION" Type="varchar" MaxLength="5" />
+          <Property Name="DESDE" Type="datetime" />
+          <Property Name="HASTA" Type="datetime" />
+        </EntityType>
+        <EntityType Name="REP_REGLA_CLASIFICACION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="REPORTE" Type="int" Nullable="false" />
+          <Property Name="TIPO" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="VALIDACION" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="FILA" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="REP_REGLA_COLUMNA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="COLUMNA" Type="int" />
+          <Property Name="TIPO" Type="varchar" MaxLength="10" />
+          <Property Name="APLICAR" Type="varchar" MaxLength="8" />
+          <Property Name="VALIDACION" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="REP_SECTORES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DEPTO" Type="varchar" MaxLength="3" />
+          <Property Name="LUGAR" Type="varchar" MaxLength="3" />
+          <Property Name="NOMBRE_DEPTO" Type="varchar" MaxLength="70" />
+          <Property Name="NOMBRE_LUGAR" Type="varchar" MaxLength="70" />
+        </EntityType>
+        <EntityType Name="REP_TIPO_DISTRIBUCION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SIGLA" Type="varchar" MaxLength="8" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="REP_TIPO_REPORTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIP" Type="varchar" MaxLength="30" />
+          <Property Name="PRE" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="REP_VISTAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="REPORTE" Type="int" />
+          <Property Name="DISPLAY_NAME" Type="varchar" MaxLength="70" />
+          <Property Name="SHORT_NAME" Type="varchar" MaxLength="10" />
+          <Property Name="SQL_BASIC" Type="varchar" MaxLength="70" />
+          <Property Name="SQL_MESES" Type="varchar" MaxLength="70" />
+        </EntityType>
+        <EntityType Name="REP_VISTAxPRESENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VISTA" Type="int" Nullable="false" />
+          <Property Name="PRESENTACION" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VAL_APLICA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="COD" Type="varchar" MaxLength="10" />
+          <Property Name="TXT" Type="varchar" MaxLength="50" />
+          <Property Name="TOTALIZA" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VAL_PRESENTACIONES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIP" Type="varchar" MaxLength="70" />
+          <Property Name="SOLO_ACUM" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VAL_TIPO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="COD" Type="varchar" MaxLength="10" />
+          <Property Name="TXT" Type="varchar" MaxLength="50" />
+          <Property Name="TOTALIZA" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'EFIN.dbo.VAL_TIPO_CLASIF' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+        <EntityType Name="VAL_TIPO_CLASIF">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="COD" Type="varchar" MaxLength="4" />
+          <Property Name="TXT" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__REP_COLUM__VISTA__09A971A2">
+          <End Role="REP_VISTAS" Type="EFINModel.Store.REP_VISTAS" Multiplicity="0..1" />
+          <End Role="REP_COLUMNAS" Type="EFINModel.Store.REP_COLUMNAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_VISTAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_COLUMNAS">
+              <PropertyRef Name="VISTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_COMP___CUENT__20C1E124">
+          <End Role="REP_INDICE_CUENTAS" Type="EFINModel.Store.REP_INDICE_CUENTAS" Multiplicity="0..1" />
+          <End Role="REP_COMP_FILA" Type="EFINModel.Store.REP_COMP_FILA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_INDICE_CUENTAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_COMP_FILA">
+              <PropertyRef Name="CUENTA_COMP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_COMP___FILA___1ED998B2">
+          <End Role="REP_FILAS_REPORTE" Type="EFINModel.Store.REP_FILAS_REPORTE" Multiplicity="0..1" />
+          <End Role="REP_COMP_FILA" Type="EFINModel.Store.REP_COMP_FILA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_FILAS_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_COMP_FILA">
+              <PropertyRef Name="FILA_TOTAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_COMP___FILA___1FCDBCEB">
+          <End Role="REP_FILAS_REPORTE" Type="EFINModel.Store.REP_FILAS_REPORTE" Multiplicity="0..1" />
+          <End Role="REP_COMP_FILA" Type="EFINModel.Store.REP_COMP_FILA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_FILAS_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_COMP_FILA">
+              <PropertyRef Name="FILA_COMP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_DISTR__DISTR__48CFD27E">
+          <End Role="REP_TIPO_DISTRIBUCION" Type="EFINModel.Store.REP_TIPO_DISTRIBUCION" Multiplicity="0..1" />
+          <End Role="REP_DISTRIBxFILA" Type="EFINModel.Store.REP_DISTRIBxFILA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_TIPO_DISTRIBUCION">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_DISTRIBxFILA">
+              <PropertyRef Name="DISTRIBUCION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_DISTR__PERIO__2A164134">
+          <End Role="REP_PERIODO_DISTRIB" Type="EFINModel.Store.REP_PERIODO_DISTRIB" Multiplicity="0..1" />
+          <End Role="REP_DISTRIBxSECTOR" Type="EFINModel.Store.REP_DISTRIBxSECTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_PERIODO_DISTRIB">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_DISTRIBxSECTOR">
+              <PropertyRef Name="PERIODO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_DISTR__SECTO__2B0A656D">
+          <End Role="REP_SECTORES" Type="EFINModel.Store.REP_SECTORES" Multiplicity="0..1" />
+          <End Role="REP_DISTRIBxSECTOR" Type="EFINModel.Store.REP_DISTRIBxSECTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_SECTORES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_DISTRIBxSECTOR">
+              <PropertyRef Name="SECTOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_DISTRI__FILA__47DBAE45">
+          <End Role="REP_FILAS_REPORTE" Type="EFINModel.Store.REP_FILAS_REPORTE" Multiplicity="0..1" />
+          <End Role="REP_DISTRIBxFILA" Type="EFINModel.Store.REP_DISTRIBxFILA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_FILAS_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_DISTRIBxFILA">
+              <PropertyRef Name="FILA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_FILAS__REPOR__145C0A3F">
+          <End Role="REP_TIPO_REPORTE" Type="EFINModel.Store.REP_TIPO_REPORTE" Multiplicity="0..1" />
+          <End Role="REP_FILAS_REPORTE" Type="EFINModel.Store.REP_FILAS_REPORTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_TIPO_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_FILAS_REPORTE">
+              <PropertyRef Name="REPORTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_PERIO__DISTR__25518C17">
+          <End Role="REP_TIPO_DISTRIBUCION" Type="EFINModel.Store.REP_TIPO_DISTRIBUCION" Multiplicity="0..1" />
+          <End Role="REP_PERIODO_DISTRIB" Type="EFINModel.Store.REP_PERIODO_DISTRIB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_TIPO_DISTRIBUCION">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_PERIODO_DISTRIB">
+              <PropertyRef Name="DISTRIB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_REGLA__COLUM__0E6E26BF">
+          <End Role="REP_COLUMNAS" Type="EFINModel.Store.REP_COLUMNAS" Multiplicity="0..1" />
+          <End Role="REP_REGLA_COLUMNA" Type="EFINModel.Store.REP_REGLA_COLUMNA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_COLUMNAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_REGLA_COLUMNA">
+              <PropertyRef Name="COLUMNA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_REGLA__REPOR__37A5467C">
+          <End Role="REP_TIPO_REPORTE" Type="EFINModel.Store.REP_TIPO_REPORTE" Multiplicity="1" />
+          <End Role="REP_REGLA_CLASIFICACION" Type="EFINModel.Store.REP_REGLA_CLASIFICACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_TIPO_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_REGLA_CLASIFICACION">
+              <PropertyRef Name="REPORTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_REGLAS__FILA__38996AB5">
+          <End Role="REP_FILAS_REPORTE" Type="EFINModel.Store.REP_FILAS_REPORTE" Multiplicity="1" />
+          <End Role="REP_REGLA_CLASIFICACION" Type="EFINModel.Store.REP_REGLA_CLASIFICACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_FILAS_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_REGLA_CLASIFICACION">
+              <PropertyRef Name="FILA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_VISTA__PRESE__2DB1C7EE">
+          <End Role="VAL_PRESENTACIONES" Type="EFINModel.Store.VAL_PRESENTACIONES" Multiplicity="1" />
+          <End Role="REP_VISTAxPRESENT" Type="EFINModel.Store.REP_VISTAxPRESENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAL_PRESENTACIONES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_VISTAxPRESENT">
+              <PropertyRef Name="PRESENTACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_VISTA__REPOR__7B5B524B">
+          <End Role="REP_TIPO_REPORTE" Type="EFINModel.Store.REP_TIPO_REPORTE" Multiplicity="0..1" />
+          <End Role="REP_VISTAS" Type="EFINModel.Store.REP_VISTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_TIPO_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_VISTAS">
+              <PropertyRef Name="REPORTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_VISTA__VISTA__2CBDA3B5">
+          <End Role="REP_VISTAS" Type="EFINModel.Store.REP_VISTAS" Multiplicity="1" />
+          <End Role="REP_VISTAxPRESENT" Type="EFINModel.Store.REP_VISTAxPRESENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_VISTAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_VISTAxPRESENT">
+              <PropertyRef Name="VISTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REP_COMP_FILA_REPORTE">
+          <End Role="REP_TIPO_REPORTE" Type="EFINModel.Store.REP_TIPO_REPORTE" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="REP_COMP_FILA" Type="EFINModel.Store.REP_COMP_FILA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_TIPO_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_COMP_FILA">
+              <PropertyRef Name="REPORTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EFINModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="EFINEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="REP_COLUMNAS" EntityType="EFINModel.REP_COLUMNAS" />
+          <EntitySet Name="REP_COMP_FILA" EntityType="EFINModel.REP_COMP_FILA" />
+          <EntitySet Name="REP_DISTRIBxFILA" EntityType="EFINModel.REP_DISTRIBxFILA" />
+          <EntitySet Name="REP_DISTRIBxSECTOR" EntityType="EFINModel.REP_DISTRIBxSECTOR" />
+          <EntitySet Name="REP_FILAS_REPORTE" EntityType="EFINModel.REP_FILAS_REPORTE" />
+          <EntitySet Name="REP_INDICE_CUENTAS" EntityType="EFINModel.REP_INDICE_CUENTAS" />
+          <EntitySet Name="REP_PERIODO_DISTRIB" EntityType="EFINModel.REP_PERIODO_DISTRIB" />
+          <EntitySet Name="REP_REGLA_CLASIFICACION" EntityType="EFINModel.REP_REGLA_CLASIFICACION" />
+          <EntitySet Name="REP_REGLA_COLUMNA" EntityType="EFINModel.REP_REGLA_COLUMNA" />
+          <EntitySet Name="REP_SECTORES" EntityType="EFINModel.REP_SECTORES" />
+          <EntitySet Name="REP_TIPO_DISTRIBUCION" EntityType="EFINModel.REP_TIPO_DISTRIBUCION" />
+          <EntitySet Name="REP_TIPO_REPORTE" EntityType="EFINModel.REP_TIPO_REPORTE" />
+          <EntitySet Name="REP_VISTAS" EntityType="EFINModel.REP_VISTAS" />
+          <EntitySet Name="REP_VISTAxPRESENT" EntityType="EFINModel.REP_VISTAxPRESENT" />
+          <EntitySet Name="VAL_APLICA" EntityType="EFINModel.VAL_APLICA" />
+          <EntitySet Name="VAL_PRESENTACIONES" EntityType="EFINModel.VAL_PRESENTACIONES" />
+          <EntitySet Name="VAL_TIPO" EntityType="EFINModel.VAL_TIPO" />
+          <EntitySet Name="VAL_TIPO_CLASIF" EntityType="EFINModel.VAL_TIPO_CLASIF" />
+          <AssociationSet Name="FK__REP_COLUM__VISTA__09A971A2" Association="EFINModel.FK__REP_COLUM__VISTA__09A971A2">
+            <End Role="REP_VISTAS" EntitySet="REP_VISTAS" />
+            <End Role="REP_COLUMNAS" EntitySet="REP_COLUMNAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_REGLA__COLUM__0E6E26BF" Association="EFINModel.FK__REP_REGLA__COLUM__0E6E26BF">
+            <End Role="REP_COLUMNAS" EntitySet="REP_COLUMNAS" />
+            <End Role="REP_REGLA_COLUMNA" EntitySet="REP_REGLA_COLUMNA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_COMP___CUENT__20C1E124" Association="EFINModel.FK__REP_COMP___CUENT__20C1E124">
+            <End Role="REP_INDICE_CUENTAS" EntitySet="REP_INDICE_CUENTAS" />
+            <End Role="REP_COMP_FILA" EntitySet="REP_COMP_FILA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_COMP___FILA___1ED998B2" Association="EFINModel.FK__REP_COMP___FILA___1ED998B2">
+            <End Role="REP_FILAS_REPORTE" EntitySet="REP_FILAS_REPORTE" />
+            <End Role="REP_COMP_FILA" EntitySet="REP_COMP_FILA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_COMP___FILA___1FCDBCEB" Association="EFINModel.FK__REP_COMP___FILA___1FCDBCEB">
+            <End Role="REP_FILAS_REPORTE" EntitySet="REP_FILAS_REPORTE" />
+            <End Role="REP_COMP_FILA" EntitySet="REP_COMP_FILA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REP_COMP_FILA_REPORTE" Association="EFINModel.FK_REP_COMP_FILA_REPORTE">
+            <End Role="REP_TIPO_REPORTE" EntitySet="REP_TIPO_REPORTE" />
+            <End Role="REP_COMP_FILA" EntitySet="REP_COMP_FILA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_DISTR__DISTR__48CFD27E" Association="EFINModel.FK__REP_DISTR__DISTR__48CFD27E">
+            <End Role="REP_TIPO_DISTRIBUCION" EntitySet="REP_TIPO_DISTRIBUCION" />
+            <End Role="REP_DISTRIBxFILA" EntitySet="REP_DISTRIBxFILA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_DISTRI__FILA__47DBAE45" Association="EFINModel.FK__REP_DISTRI__FILA__47DBAE45">
+            <End Role="REP_FILAS_REPORTE" EntitySet="REP_FILAS_REPORTE" />
+            <End Role="REP_DISTRIBxFILA" EntitySet="REP_DISTRIBxFILA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_DISTR__PERIO__2A164134" Association="EFINModel.FK__REP_DISTR__PERIO__2A164134">
+            <End Role="REP_PERIODO_DISTRIB" EntitySet="REP_PERIODO_DISTRIB" />
+            <End Role="REP_DISTRIBxSECTOR" EntitySet="REP_DISTRIBxSECTOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_DISTR__SECTO__2B0A656D" Association="EFINModel.FK__REP_DISTR__SECTO__2B0A656D">
+            <End Role="REP_SECTORES" EntitySet="REP_SECTORES" />
+            <End Role="REP_DISTRIBxSECTOR" EntitySet="REP_DISTRIBxSECTOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_FILAS__REPOR__145C0A3F" Association="EFINModel.FK__REP_FILAS__REPOR__145C0A3F">
+            <End Role="REP_TIPO_REPORTE" EntitySet="REP_TIPO_REPORTE" />
+            <End Role="REP_FILAS_REPORTE" EntitySet="REP_FILAS_REPORTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_REGLAS__FILA__38996AB5" Association="EFINModel.FK__REP_REGLAS__FILA__38996AB5">
+            <End Role="REP_FILAS_REPORTE" EntitySet="REP_FILAS_REPORTE" />
+            <End Role="REP_REGLA_CLASIFICACION" EntitySet="REP_REGLA_CLASIFICACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_PERIO__DISTR__25518C17" Association="EFINModel.FK__REP_PERIO__DISTR__25518C17">
+            <End Role="REP_TIPO_DISTRIBUCION" EntitySet="REP_TIPO_DISTRIBUCION" />
+            <End Role="REP_PERIODO_DISTRIB" EntitySet="REP_PERIODO_DISTRIB" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_REGLA__REPOR__37A5467C" Association="EFINModel.FK__REP_REGLA__REPOR__37A5467C">
+            <End Role="REP_TIPO_REPORTE" EntitySet="REP_TIPO_REPORTE" />
+            <End Role="REP_REGLA_CLASIFICACION" EntitySet="REP_REGLA_CLASIFICACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_VISTA__REPOR__7B5B524B" Association="EFINModel.FK__REP_VISTA__REPOR__7B5B524B">
+            <End Role="REP_TIPO_REPORTE" EntitySet="REP_TIPO_REPORTE" />
+            <End Role="REP_VISTAS" EntitySet="REP_VISTAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_VISTA__VISTA__2CBDA3B5" Association="EFINModel.FK__REP_VISTA__VISTA__2CBDA3B5">
+            <End Role="REP_VISTAS" EntitySet="REP_VISTAS" />
+            <End Role="REP_VISTAxPRESENT" EntitySet="REP_VISTAxPRESENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__REP_VISTA__PRESE__2DB1C7EE" Association="EFINModel.FK__REP_VISTA__PRESE__2DB1C7EE">
+            <End Role="VAL_PRESENTACIONES" EntitySet="VAL_PRESENTACIONES" />
+            <End Role="REP_VISTAxPRESENT" EntitySet="REP_VISTAxPRESENT" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="REP_COLUMNAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VISTA" Type="Int32" />
+          <Property Name="COD" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ORDEN" Type="Int32" />
+          <Property Name="TOTALIZA" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="REP_VISTAS" Relationship="EFINModel.FK__REP_COLUM__VISTA__09A971A2" FromRole="REP_COLUMNAS" ToRole="REP_VISTAS" />
+          <NavigationProperty Name="REP_REGLA_COLUMNA" Relationship="EFINModel.FK__REP_REGLA__COLUM__0E6E26BF" FromRole="REP_COLUMNAS" ToRole="REP_REGLA_COLUMNA" />
+        </EntityType>
+        <EntityType Name="REP_COMP_FILA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FILA_TOTAL" Type="Int32" />
+          <Property Name="FILA_COMP" Type="Int32" />
+          <Property Name="CUENTA_COMP" Type="Int32" />
+          <Property Name="REPORTE" Type="Int32" />
+          <Property Name="DESDE" Type="DateTime" />
+          <Property Name="HASTA" Type="DateTime" />
+          <NavigationProperty Name="REP_INDICE_CUENTAS" Relationship="EFINModel.FK__REP_COMP___CUENT__20C1E124" FromRole="REP_COMP_FILA" ToRole="REP_INDICE_CUENTAS" />
+          <NavigationProperty Name="REP_FILAS_REPORTE" Relationship="EFINModel.FK__REP_COMP___FILA___1ED998B2" FromRole="REP_COMP_FILA" ToRole="REP_FILAS_REPORTE" />
+          <NavigationProperty Name="REP_FILAS_REPORTE1" Relationship="EFINModel.FK__REP_COMP___FILA___1FCDBCEB" FromRole="REP_COMP_FILA" ToRole="REP_FILAS_REPORTE" />
+          <NavigationProperty Name="REP_TIPO_REPORTE" Relationship="EFINModel.FK_REP_COMP_FILA_REPORTE" FromRole="REP_COMP_FILA" ToRole="REP_TIPO_REPORTE" />
+        </EntityType>
+        <EntityType Name="REP_DISTRIBxFILA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FILA" Type="Int32" />
+          <Property Name="DISTRIBUCION" Type="Int32" />
+          <NavigationProperty Name="REP_TIPO_DISTRIBUCION" Relationship="EFINModel.FK__REP_DISTR__DISTR__48CFD27E" FromRole="REP_DISTRIBxFILA" ToRole="REP_TIPO_DISTRIBUCION" />
+          <NavigationProperty Name="REP_FILAS_REPORTE" Relationship="EFINModel.FK__REP_DISTRI__FILA__47DBAE45" FromRole="REP_DISTRIBxFILA" ToRole="REP_FILAS_REPORTE" />
+        </EntityType>
+        <EntityType Name="REP_DISTRIBxSECTOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SECTOR" Type="Int32" />
+          <Property Name="PERIODO" Type="Int32" />
+          <Property Name="VALOR" Type="Decimal" Precision="10" Scale="5" />
+          <NavigationProperty Name="REP_PERIODO_DISTRIB" Relationship="EFINModel.FK__REP_DISTR__PERIO__2A164134" FromRole="REP_DISTRIBxSECTOR" ToRole="REP_PERIODO_DISTRIB" />
+          <NavigationProperty Name="REP_SECTORES" Relationship="EFINModel.FK__REP_DISTR__SECTO__2B0A656D" FromRole="REP_DISTRIBxSECTOR" ToRole="REP_SECTORES" />
+        </EntityType>
+        <EntityType Name="REP_FILAS_REPORTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="REPORTE" Type="Int32" />
+          <Property Name="DESCRIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ORDEN" Type="Int32" />
+          <Property Name="CAMBIAR" Type="Boolean" />
+          <Property Name="CCODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="TOTAL_PINTA" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIP_JP" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="REP_COMP_FILA" Relationship="EFINModel.FK__REP_COMP___FILA___1ED998B2" FromRole="REP_FILAS_REPORTE" ToRole="REP_COMP_FILA" />
+          <NavigationProperty Name="REP_COMP_FILA1" Relationship="EFINModel.FK__REP_COMP___FILA___1FCDBCEB" FromRole="REP_FILAS_REPORTE" ToRole="REP_COMP_FILA" />
+          <NavigationProperty Name="REP_DISTRIBxFILA" Relationship="EFINModel.FK__REP_DISTRI__FILA__47DBAE45" FromRole="REP_FILAS_REPORTE" ToRole="REP_DISTRIBxFILA" />
+          <NavigationProperty Name="REP_TIPO_REPORTE" Relationship="EFINModel.FK__REP_FILAS__REPOR__145C0A3F" FromRole="REP_FILAS_REPORTE" ToRole="REP_TIPO_REPORTE" />
+          <NavigationProperty Name="REP_REGLA_CLASIFICACION" Relationship="EFINModel.FK__REP_REGLAS__FILA__38996AB5" FromRole="REP_FILAS_REPORTE" ToRole="REP_REGLA_CLASIFICACION" />
+        </EntityType>
+        <EntityType Name="REP_INDICE_CUENTAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COD_DEPTO" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="COD_LUGAR" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="COD_GESTN" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="NUM_CUENTA" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="REP_COMP_FILA" Relationship="EFINModel.FK__REP_COMP___CUENT__20C1E124" FromRole="REP_INDICE_CUENTAS" ToRole="REP_COMP_FILA" />
+        </EntityType>
+        <EntityType Name="REP_PERIODO_DISTRIB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DISTRIB" Type="Int32" />
+          <Property Name="ACCION" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="DESDE" Type="DateTime" />
+          <Property Name="HASTA" Type="DateTime" />
+          <NavigationProperty Name="REP_DISTRIBxSECTOR" Relationship="EFINModel.FK__REP_DISTR__PERIO__2A164134" FromRole="REP_PERIODO_DISTRIB" ToRole="REP_DISTRIBxSECTOR" />
+          <NavigationProperty Name="REP_TIPO_DISTRIBUCION" Relationship="EFINModel.FK__REP_PERIO__DISTR__25518C17" FromRole="REP_PERIODO_DISTRIB" ToRole="REP_TIPO_DISTRIBUCION" />
+        </EntityType>
+        <EntityType Name="REP_REGLA_CLASIFICACION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="REPORTE" Type="Int32" Nullable="false" />
+          <Property Name="TIPO" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="VALIDACION" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="FILA" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="REP_FILAS_REPORTE" Relationship="EFINModel.FK__REP_REGLAS__FILA__38996AB5" FromRole="REP_REGLA_CLASIFICACION" ToRole="REP_FILAS_REPORTE" />
+          <NavigationProperty Name="REP_TIPO_REPORTE" Relationship="EFINModel.FK__REP_REGLA__REPOR__37A5467C" FromRole="REP_REGLA_CLASIFICACION" ToRole="REP_TIPO_REPORTE" />
+        </EntityType>
+        <EntityType Name="REP_REGLA_COLUMNA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COLUMNA" Type="Int32" />
+          <Property Name="TIPO" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="APLICAR" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="VALIDACION" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="REP_COLUMNAS" Relationship="EFINModel.FK__REP_REGLA__COLUM__0E6E26BF" FromRole="REP_REGLA_COLUMNA" ToRole="REP_COLUMNAS" />
+        </EntityType>
+        <EntityType Name="REP_SECTORES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DEPTO" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="LUGAR" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="NOMBRE_DEPTO" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="NOMBRE_LUGAR" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="REP_DISTRIBxSECTOR" Relationship="EFINModel.FK__REP_DISTR__SECTO__2B0A656D" FromRole="REP_SECTORES" ToRole="REP_DISTRIBxSECTOR" />
+        </EntityType>
+        <EntityType Name="REP_TIPO_DISTRIBUCION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SIGLA" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="REP_DISTRIBxFILA" Relationship="EFINModel.FK__REP_DISTR__DISTR__48CFD27E" FromRole="REP_TIPO_DISTRIBUCION" ToRole="REP_DISTRIBxFILA" />
+          <NavigationProperty Name="REP_PERIODO_DISTRIB" Relationship="EFINModel.FK__REP_PERIO__DISTR__25518C17" FromRole="REP_TIPO_DISTRIBUCION" ToRole="REP_PERIODO_DISTRIB" />
+        </EntityType>
+        <EntityType Name="REP_TIPO_REPORTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIP" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="PRE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="REP_COMP_FILA" Relationship="EFINModel.FK_REP_COMP_FILA_REPORTE" FromRole="REP_TIPO_REPORTE" ToRole="REP_COMP_FILA" />
+          <NavigationProperty Name="REP_FILAS_REPORTE" Relationship="EFINModel.FK__REP_FILAS__REPOR__145C0A3F" FromRole="REP_TIPO_REPORTE" ToRole="REP_FILAS_REPORTE" />
+          <NavigationProperty Name="REP_REGLA_CLASIFICACION" Relationship="EFINModel.FK__REP_REGLA__REPOR__37A5467C" FromRole="REP_TIPO_REPORTE" ToRole="REP_REGLA_CLASIFICACION" />
+          <NavigationProperty Name="REP_VISTAS" Relationship="EFINModel.FK__REP_VISTA__REPOR__7B5B524B" FromRole="REP_TIPO_REPORTE" ToRole="REP_VISTAS" />
+        </EntityType>
+        <EntityType Name="REP_VISTAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="REPORTE" Type="Int32" />
+          <Property Name="DISPLAY_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="SHORT_NAME" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SQL_BASIC" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="SQL_MESES" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="REP_COLUMNAS" Relationship="EFINModel.FK__REP_COLUM__VISTA__09A971A2" FromRole="REP_VISTAS" ToRole="REP_COLUMNAS" />
+          <NavigationProperty Name="REP_TIPO_REPORTE" Relationship="EFINModel.FK__REP_VISTA__REPOR__7B5B524B" FromRole="REP_VISTAS" ToRole="REP_TIPO_REPORTE" />
+          <NavigationProperty Name="REP_VISTAxPRESENT" Relationship="EFINModel.FK__REP_VISTA__VISTA__2CBDA3B5" FromRole="REP_VISTAS" ToRole="REP_VISTAxPRESENT" />
+        </EntityType>
+        <EntityType Name="REP_VISTAxPRESENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VISTA" Type="Int32" Nullable="false" />
+          <Property Name="PRESENTACION" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="REP_VISTAS" Relationship="EFINModel.FK__REP_VISTA__VISTA__2CBDA3B5" FromRole="REP_VISTAxPRESENT" ToRole="REP_VISTAS" />
+          <NavigationProperty Name="VAL_PRESENTACIONES" Relationship="EFINModel.FK__REP_VISTA__PRESE__2DB1C7EE" FromRole="REP_VISTAxPRESENT" ToRole="VAL_PRESENTACIONES" />
+        </EntityType>
+        <EntityType Name="VAL_APLICA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COD" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="TXT" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TOTALIZA" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VAL_PRESENTACIONES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIP" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="SOLO_ACUM" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="REP_VISTAxPRESENT" Relationship="EFINModel.FK__REP_VISTA__PRESE__2DB1C7EE" FromRole="VAL_PRESENTACIONES" ToRole="REP_VISTAxPRESENT" />
+        </EntityType>
+        <EntityType Name="VAL_TIPO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COD" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="TXT" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TOTALIZA" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VAL_TIPO_CLASIF">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COD" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="TXT" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK__REP_COLUM__VISTA__09A971A2">
+          <End Role="REP_VISTAS" Type="EFINModel.REP_VISTAS" Multiplicity="0..1" />
+          <End Role="REP_COLUMNAS" Type="EFINModel.REP_COLUMNAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_VISTAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_COLUMNAS">
+              <PropertyRef Name="VISTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_REGLA__COLUM__0E6E26BF">
+          <End Role="REP_COLUMNAS" Type="EFINModel.REP_COLUMNAS" Multiplicity="0..1" />
+          <End Role="REP_REGLA_COLUMNA" Type="EFINModel.REP_REGLA_COLUMNA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_COLUMNAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_REGLA_COLUMNA">
+              <PropertyRef Name="COLUMNA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_COMP___CUENT__20C1E124">
+          <End Role="REP_INDICE_CUENTAS" Type="EFINModel.REP_INDICE_CUENTAS" Multiplicity="0..1" />
+          <End Role="REP_COMP_FILA" Type="EFINModel.REP_COMP_FILA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_INDICE_CUENTAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_COMP_FILA">
+              <PropertyRef Name="CUENTA_COMP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_COMP___FILA___1ED998B2">
+          <End Role="REP_FILAS_REPORTE" Type="EFINModel.REP_FILAS_REPORTE" Multiplicity="0..1" />
+          <End Role="REP_COMP_FILA" Type="EFINModel.REP_COMP_FILA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_FILAS_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_COMP_FILA">
+              <PropertyRef Name="FILA_TOTAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_COMP___FILA___1FCDBCEB">
+          <End Role="REP_FILAS_REPORTE" Type="EFINModel.REP_FILAS_REPORTE" Multiplicity="0..1" />
+          <End Role="REP_COMP_FILA" Type="EFINModel.REP_COMP_FILA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_FILAS_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_COMP_FILA">
+              <PropertyRef Name="FILA_COMP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REP_COMP_FILA_REPORTE">
+          <End Role="REP_TIPO_REPORTE" Type="EFINModel.REP_TIPO_REPORTE" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="REP_COMP_FILA" Type="EFINModel.REP_COMP_FILA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_TIPO_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_COMP_FILA">
+              <PropertyRef Name="REPORTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_DISTR__DISTR__48CFD27E">
+          <End Role="REP_TIPO_DISTRIBUCION" Type="EFINModel.REP_TIPO_DISTRIBUCION" Multiplicity="0..1" />
+          <End Role="REP_DISTRIBxFILA" Type="EFINModel.REP_DISTRIBxFILA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_TIPO_DISTRIBUCION">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_DISTRIBxFILA">
+              <PropertyRef Name="DISTRIBUCION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_DISTRI__FILA__47DBAE45">
+          <End Role="REP_FILAS_REPORTE" Type="EFINModel.REP_FILAS_REPORTE" Multiplicity="0..1" />
+          <End Role="REP_DISTRIBxFILA" Type="EFINModel.REP_DISTRIBxFILA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_FILAS_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_DISTRIBxFILA">
+              <PropertyRef Name="FILA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_DISTR__PERIO__2A164134">
+          <End Role="REP_PERIODO_DISTRIB" Type="EFINModel.REP_PERIODO_DISTRIB" Multiplicity="0..1" />
+          <End Role="REP_DISTRIBxSECTOR" Type="EFINModel.REP_DISTRIBxSECTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_PERIODO_DISTRIB">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_DISTRIBxSECTOR">
+              <PropertyRef Name="PERIODO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_DISTR__SECTO__2B0A656D">
+          <End Role="REP_SECTORES" Type="EFINModel.REP_SECTORES" Multiplicity="0..1" />
+          <End Role="REP_DISTRIBxSECTOR" Type="EFINModel.REP_DISTRIBxSECTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_SECTORES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_DISTRIBxSECTOR">
+              <PropertyRef Name="SECTOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_FILAS__REPOR__145C0A3F">
+          <End Role="REP_TIPO_REPORTE" Type="EFINModel.REP_TIPO_REPORTE" Multiplicity="0..1" />
+          <End Role="REP_FILAS_REPORTE" Type="EFINModel.REP_FILAS_REPORTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_TIPO_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_FILAS_REPORTE">
+              <PropertyRef Name="REPORTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_REGLAS__FILA__38996AB5">
+          <End Role="REP_FILAS_REPORTE" Type="EFINModel.REP_FILAS_REPORTE" Multiplicity="1" />
+          <End Role="REP_REGLA_CLASIFICACION" Type="EFINModel.REP_REGLA_CLASIFICACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_FILAS_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_REGLA_CLASIFICACION">
+              <PropertyRef Name="FILA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_PERIO__DISTR__25518C17">
+          <End Role="REP_TIPO_DISTRIBUCION" Type="EFINModel.REP_TIPO_DISTRIBUCION" Multiplicity="0..1" />
+          <End Role="REP_PERIODO_DISTRIB" Type="EFINModel.REP_PERIODO_DISTRIB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_TIPO_DISTRIBUCION">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_PERIODO_DISTRIB">
+              <PropertyRef Name="DISTRIB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_REGLA__REPOR__37A5467C">
+          <End Role="REP_TIPO_REPORTE" Type="EFINModel.REP_TIPO_REPORTE" Multiplicity="1" />
+          <End Role="REP_REGLA_CLASIFICACION" Type="EFINModel.REP_REGLA_CLASIFICACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_TIPO_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_REGLA_CLASIFICACION">
+              <PropertyRef Name="REPORTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_VISTA__REPOR__7B5B524B">
+          <End Role="REP_TIPO_REPORTE" Type="EFINModel.REP_TIPO_REPORTE" Multiplicity="0..1" />
+          <End Role="REP_VISTAS" Type="EFINModel.REP_VISTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_TIPO_REPORTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_VISTAS">
+              <PropertyRef Name="REPORTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_VISTA__VISTA__2CBDA3B5">
+          <End Role="REP_VISTAS" Type="EFINModel.REP_VISTAS" Multiplicity="1" />
+          <End Role="REP_VISTAxPRESENT" Type="EFINModel.REP_VISTAxPRESENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REP_VISTAS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_VISTAxPRESENT">
+              <PropertyRef Name="VISTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__REP_VISTA__PRESE__2DB1C7EE">
+          <End Role="VAL_PRESENTACIONES" Type="EFINModel.VAL_PRESENTACIONES" Multiplicity="1" />
+          <End Role="REP_VISTAxPRESENT" Type="EFINModel.REP_VISTAxPRESENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAL_PRESENTACIONES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REP_VISTAxPRESENT">
+              <PropertyRef Name="PRESENTACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EFINModelStoreContainer" CdmEntityContainer="EFINEntities">
+          <EntitySetMapping Name="REP_COLUMNAS">
+            <EntityTypeMapping TypeName="EFINModel.REP_COLUMNAS">
+              <MappingFragment StoreEntitySet="REP_COLUMNAS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VISTA" ColumnName="VISTA" />
+                <ScalarProperty Name="COD" ColumnName="COD" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+                <ScalarProperty Name="TOTALIZA" ColumnName="TOTALIZA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REP_COMP_FILA">
+            <EntityTypeMapping TypeName="EFINModel.REP_COMP_FILA">
+              <MappingFragment StoreEntitySet="REP_COMP_FILA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FILA_TOTAL" ColumnName="FILA_TOTAL" />
+                <ScalarProperty Name="FILA_COMP" ColumnName="FILA_COMP" />
+                <ScalarProperty Name="CUENTA_COMP" ColumnName="CUENTA_COMP" />
+                <ScalarProperty Name="REPORTE" ColumnName="REPORTE" />
+                <ScalarProperty Name="DESDE" ColumnName="DESDE" />
+                <ScalarProperty Name="HASTA" ColumnName="HASTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REP_DISTRIBxFILA">
+            <EntityTypeMapping TypeName="EFINModel.REP_DISTRIBxFILA">
+              <MappingFragment StoreEntitySet="REP_DISTRIBxFILA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FILA" ColumnName="FILA" />
+                <ScalarProperty Name="DISTRIBUCION" ColumnName="DISTRIBUCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REP_DISTRIBxSECTOR">
+            <EntityTypeMapping TypeName="EFINModel.REP_DISTRIBxSECTOR">
+              <MappingFragment StoreEntitySet="REP_DISTRIBxSECTOR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SECTOR" ColumnName="SECTOR" />
+                <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+                <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REP_FILAS_REPORTE">
+            <EntityTypeMapping TypeName="EFINModel.REP_FILAS_REPORTE">
+              <MappingFragment StoreEntitySet="REP_FILAS_REPORTE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="REPORTE" ColumnName="REPORTE" />
+                <ScalarProperty Name="DESCRIP" ColumnName="DESCRIP" />
+                <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+                <ScalarProperty Name="CAMBIAR" ColumnName="CAMBIAR" />
+                <ScalarProperty Name="CCODE" ColumnName="CCODE" />
+                <ScalarProperty Name="TOTAL_PINTA" ColumnName="TOTAL_PINTA" />
+                <ScalarProperty Name="DESCRIP_JP" ColumnName="DESCRIP_JP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REP_INDICE_CUENTAS">
+            <EntityTypeMapping TypeName="EFINModel.REP_INDICE_CUENTAS">
+              <MappingFragment StoreEntitySet="REP_INDICE_CUENTAS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="COD_DEPTO" ColumnName="COD_DEPTO" />
+                <ScalarProperty Name="COD_LUGAR" ColumnName="COD_LUGAR" />
+                <ScalarProperty Name="COD_GESTN" ColumnName="COD_GESTN" />
+                <ScalarProperty Name="NUM_CUENTA" ColumnName="NUM_CUENTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REP_PERIODO_DISTRIB">
+            <EntityTypeMapping TypeName="EFINModel.REP_PERIODO_DISTRIB">
+              <MappingFragment StoreEntitySet="REP_PERIODO_DISTRIB">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DISTRIB" ColumnName="DISTRIB" />
+                <ScalarProperty Name="ACCION" ColumnName="ACCION" />
+                <ScalarProperty Name="DESDE" ColumnName="DESDE" />
+                <ScalarProperty Name="HASTA" ColumnName="HASTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REP_REGLA_CLASIFICACION">
+            <EntityTypeMapping TypeName="EFINModel.REP_REGLA_CLASIFICACION">
+              <MappingFragment StoreEntitySet="REP_REGLA_CLASIFICACION">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="REPORTE" ColumnName="REPORTE" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="VALIDACION" ColumnName="VALIDACION" />
+                <ScalarProperty Name="FILA" ColumnName="FILA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REP_REGLA_COLUMNA">
+            <EntityTypeMapping TypeName="EFINModel.REP_REGLA_COLUMNA">
+              <MappingFragment StoreEntitySet="REP_REGLA_COLUMNA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="COLUMNA" ColumnName="COLUMNA" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="APLICAR" ColumnName="APLICAR" />
+                <ScalarProperty Name="VALIDACION" ColumnName="VALIDACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REP_SECTORES">
+            <EntityTypeMapping TypeName="EFINModel.REP_SECTORES">
+              <MappingFragment StoreEntitySet="REP_SECTORES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DEPTO" ColumnName="DEPTO" />
+                <ScalarProperty Name="LUGAR" ColumnName="LUGAR" />
+                <ScalarProperty Name="NOMBRE_DEPTO" ColumnName="NOMBRE_DEPTO" />
+                <ScalarProperty Name="NOMBRE_LUGAR" ColumnName="NOMBRE_LUGAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REP_TIPO_DISTRIBUCION">
+            <EntityTypeMapping TypeName="EFINModel.REP_TIPO_DISTRIBUCION">
+              <MappingFragment StoreEntitySet="REP_TIPO_DISTRIBUCION">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SIGLA" ColumnName="SIGLA" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REP_TIPO_REPORTE">
+            <EntityTypeMapping TypeName="EFINModel.REP_TIPO_REPORTE">
+              <MappingFragment StoreEntitySet="REP_TIPO_REPORTE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRIP" ColumnName="DESCRIP" />
+                <ScalarProperty Name="PRE" ColumnName="PRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REP_VISTAS">
+            <EntityTypeMapping TypeName="EFINModel.REP_VISTAS">
+              <MappingFragment StoreEntitySet="REP_VISTAS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="REPORTE" ColumnName="REPORTE" />
+                <ScalarProperty Name="DISPLAY_NAME" ColumnName="DISPLAY_NAME" />
+                <ScalarProperty Name="SHORT_NAME" ColumnName="SHORT_NAME" />
+                <ScalarProperty Name="SQL_BASIC" ColumnName="SQL_BASIC" />
+                <ScalarProperty Name="SQL_MESES" ColumnName="SQL_MESES" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REP_VISTAxPRESENT">
+            <EntityTypeMapping TypeName="EFINModel.REP_VISTAxPRESENT">
+              <MappingFragment StoreEntitySet="REP_VISTAxPRESENT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VISTA" ColumnName="VISTA" />
+                <ScalarProperty Name="PRESENTACION" ColumnName="PRESENTACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VAL_APLICA">
+            <EntityTypeMapping TypeName="EFINModel.VAL_APLICA">
+              <MappingFragment StoreEntitySet="VAL_APLICA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="COD" ColumnName="COD" />
+                <ScalarProperty Name="TXT" ColumnName="TXT" />
+                <ScalarProperty Name="TOTALIZA" ColumnName="TOTALIZA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VAL_PRESENTACIONES">
+            <EntityTypeMapping TypeName="EFINModel.VAL_PRESENTACIONES">
+              <MappingFragment StoreEntitySet="VAL_PRESENTACIONES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRIP" ColumnName="DESCRIP" />
+                <ScalarProperty Name="SOLO_ACUM" ColumnName="SOLO_ACUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VAL_TIPO">
+            <EntityTypeMapping TypeName="EFINModel.VAL_TIPO">
+              <MappingFragment StoreEntitySet="VAL_TIPO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="COD" ColumnName="COD" />
+                <ScalarProperty Name="TXT" ColumnName="TXT" />
+                <ScalarProperty Name="TOTALIZA" ColumnName="TOTALIZA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VAL_TIPO_CLASIF">
+            <EntityTypeMapping TypeName="EFINModel.VAL_TIPO_CLASIF">
+              <MappingFragment StoreEntitySet="VAL_TIPO_CLASIF">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="COD" ColumnName="COD" />
+                <ScalarProperty Name="TXT" ColumnName="TXT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1" ZoomLevel="81">
+        <EntityTypeShape EntityType="EFINModel.REP_COLUMNAS" Width="1.5" PointX="5.25" PointY="15.5" Height="2.55719075520833" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.REP_COMP_FILA" Width="1.5" PointX="5.25" PointY="10.5" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.REP_DISTRIBxFILA" Width="1.5" PointX="8.25" PointY="11.875" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.REP_DISTRIBxSECTOR" Width="1.5" PointX="10.5" PointY="4.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.REP_FILAS_REPORTE" Width="1.5" PointX="3" PointY="11.125" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.REP_INDICE_CUENTAS" Width="1.5" PointX="3" PointY="8" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.REP_PERIODO_DISTRIB" Width="1.5" PointX="8.25" PointY="4.625" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.REP_REGLA_CLASIFICACION" Width="1.5" PointX="8.25" PointY="7.875" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.REP_REGLA_COLUMNA" Width="1.5" PointX="7.5" PointY="15.625" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.REP_SECTORES" Width="1.5" PointX="7.25" PointY="0.875" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.REP_TIPO_DISTRIBUCION" Width="1.5" PointX="6" PointY="6.875" Height="1.9802864583333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.REP_TIPO_REPORTE" Width="1.5" PointX="0.75" PointY="9.5" Height="2.3648893229166745" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.REP_VISTAS" Width="1.5" PointX="3" PointY="15.375" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.REP_VISTAxPRESENT" Width="1.5" PointX="5.25" PointY="18.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.VAL_APLICA" Width="1.5" PointX="1.5" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.VAL_PRESENTACIONES" Width="1.5" PointX="3" PointY="19.875" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.VAL_TIPO" Width="1.5" PointX="4.375" PointY="0.875" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EFINModel.VAL_TIPO_CLASIF" Width="1.5" PointX="0.75" PointY="5.375" Height="1.5956835937500031" IsExpanded="true" />
+        <AssociationConnector Association="EFINModel.FK__REP_COLUM__VISTA__09A971A2" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="16.778595377604166" />
+          <ConnectorPoint PointX="5.25" PointY="16.778595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_REGLA__COLUM__0E6E26BF" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="16.711293945312498" />
+          <ConnectorPoint PointX="7.5" PointY="16.711293945312498" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_COMP___CUENT__20C1E124" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="9.5451871744791674" />
+          <ConnectorPoint PointX="5.59375" PointY="9.5451871744791674" />
+          <ConnectorPoint PointX="5.59375" PointY="10.5" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_COMP___FILA___1ED998B2" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="12.379547526041666" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="12.379547526041666" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="12.379547526041666" />
+          <ConnectorPoint PointX="5.25" PointY="12.379547526041666" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_COMP___FILA___1FCDBCEB" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="11.689773763020833" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="11.689773763020833" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="11.689773763020833" />
+          <ConnectorPoint PointX="5.25" PointY="11.689773763020833" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK_REP_COMP_FILA_REPORTE" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="10.78125" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="10.78125" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="10.78125" />
+          <ConnectorPoint PointX="5.25" PointY="10.78125" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_DISTR__DISTR__48CFD27E" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.15625" PointY="8.8552864583333353" />
+          <ConnectorPoint PointX="7.15625" PointY="13.775940755208332" />
+          <ConnectorPoint PointX="8.25" PointY="13.775940755208332" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_DISTRI__FILA__47DBAE45" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="14.249492687499998" />
+          <ConnectorPoint PointX="9" PointY="14.249492687499998" />
+          <ConnectorPoint PointX="9" PointY="13.855286458333334" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_DISTR__PERIO__2A164134" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="5.8362939453125" />
+          <ConnectorPoint PointX="10.5" PointY="5.8362939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_DISTR__SECTO__2B0A656D" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.75" PointY="1.9612939453124998" />
+          <ConnectorPoint PointX="11.25" PointY="1.9612939453124998" />
+          <ConnectorPoint PointX="11.25" PointY="4.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_FILAS__REPOR__145C0A3F" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.494944661458337" />
+          <ConnectorPoint PointX="3" PointY="11.494944661458337" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_REGLAS__FILA__38996AB5" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="12.655994343749999" />
+          <ConnectorPoint PointX="5" PointY="12.655994343749999" />
+          <ConnectorPoint PointX="5" PointY="10.25" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="10.25" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="10.25" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="10.25" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="10.25" />
+          <ConnectorPoint PointX="8" PointY="10.25" />
+          <ConnectorPoint PointX="8" PointY="11.625" />
+          <ConnectorPoint PointX="9" PointY="11.625" />
+          <ConnectorPoint PointX="9" PointY="10.239889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_PERIO__DISTR__25518C17" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="6.875" />
+          <ConnectorPoint PointX="6.75" PointY="5.7499994999999995" />
+          <ConnectorPoint PointX="8.25" PointY="5.7499994999999995" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_REGLA__REPOR__37A5467C" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="9.5" />
+          <ConnectorPoint PointX="1.5" PointY="7.75" />
+          <ConnectorPoint PointX="5.75" PointY="7.75" />
+          <ConnectorPoint PointX="5.75" PointY="9.578837390625" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="9.578837390625" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="9.578837390625" />
+          <ConnectorPoint PointX="8.25" PointY="9.578837390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_VISTA__REPOR__7B5B524B" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="11.864889322916675" />
+          <ConnectorPoint PointX="1.5" PointY="16.74974609375" />
+          <ConnectorPoint PointX="3" PointY="16.74974609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_VISTA__VISTA__2CBDA3B5" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="18.124492187500003" />
+          <ConnectorPoint PointX="4.875" PointY="18.499492187500003" />
+          <ConnectorPoint PointX="4.875" PointY="18.373847153846153" />
+          <ConnectorPoint PointX="5.2511528461538459" PointY="18.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="EFINModel.FK__REP_VISTA__PRESE__2DB1C7EE" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="20.302643229166669" />
+          <ConnectorPoint PointX="5.25" PointY="20.302643229166669" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
