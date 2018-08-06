@@ -150,8 +150,8 @@
             depto = ""
             lugar = ""
             Dim nodo_actual As New TreeNode
-            For Each entrada As sector_row In entradas.Rows
-                If entrada.COD_DEPTO <> depto Then
+            For Each entrada As sector_row In entradas.Select("Valor<>0")
+                If entrada.COD_DEPTO.Trim <> depto Then
                     depto = entrada.COD_DEPTO
                     Dim nodo_depto As New TreeNode
                     nodo_depto.Text = entrada.COD_DEPTO + ":" + entrada.NOMBRE_DEPTO + " = " + (entrada.CALC_TOTAL_DEPTO * 100).ToString("0.00") + "%"

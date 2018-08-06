@@ -432,6 +432,12 @@ Public Class base_REP
         _consulta = "EXEC REP_MOD_ORDEN_FILA_REPORTE " + id_fila.ToString + "," + nuevo_orden.ToString
         Return consulta_cambio(_consulta)
     End Function
+
+    Public Function MOD_FILAS_REPORTE(ByVal indice As Integer, ByVal reporte As Integer, ByVal cod_personal As String, ByVal descripcion As String, ByVal cambiar As Boolean, ByVal pintar As Integer) As dt_query_result.myRow
+        _consulta = "EXEC REP_MOD_FILAS_REPORTE " + indice.ToString + "," + reporte.ToString + ",'" + cod_personal + "','" + descripcion + "'," + _
+            CInt(cambiar).ToString + "," + pintar.ToString
+        Return consulta_cambio(_consulta)
+    End Function
 #End Region
 
 #Region "REP_COMP_FILA"
@@ -662,7 +668,7 @@ Public Class base_REP
     ''' <returns></returns>
     ''' <remarks></remarks>
     Public Function ACTUALIZA_SECTOR_DISTRIB(ByVal periodo As Integer, ByVal sector As Integer, ByVal valor As Double) As dt_query_result.myRow
-        _consulta = "EXEC REP_ACT_SECTOR_DISTRIB " + periodo.ToString + "," + sector.ToString + "," + valor.ToString("0.000")
+        _consulta = "EXEC REP_ACT_SECTOR_DISTRIB " + periodo.ToString + "," + sector.ToString + "," + valor.ToString("0.00000")
         _tabla = maestro.ejecuta(_consulta)
         If IsNothing(_tabla) Then
             Return Nothing

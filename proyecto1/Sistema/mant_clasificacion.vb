@@ -84,6 +84,14 @@
             .AllowUserToOrderColumns = False
             '.EditMode = DataGridViewEditMode.EditProgrammatically
         End With
+
+        With dtFechaAplica
+            .ShowUpDown = True
+            .CustomFormat = "MMMM yyyy"
+            .Format = DateTimePickerFormat.Custom
+        End With
+
+
         cargar_reglas()
         cargar_clasificacion()
     End Sub
@@ -128,10 +136,11 @@
 
     Private Sub btn_autoclasificar_Click(sender As System.Object, e As System.EventArgs) Handles btn_autoclasificar.Click
         Dim confirm As DialogResult
-        confirm = Mensaje.Confirma("¿Esta seguro que desea aplicar las reglas de clasificación?")
+        Dim fecha = dtFechaAplica.Value
+        confirm = Mensaje.Confirma("¿Esta seguro que desea aplicar las reglas de clasificación al periodo " + fecha.ToString("MMMM yyyy") + "?")
         If confirm = DialogResult.Yes Then
             Dim aclas As DataTable()
-            aclas = base.AUTOCLASIFICAR(Now.Year, Now.Month, 1, _reporte.ID)
+            aclas = base.AUTOCLASIFICAR(fecha.Year, fecha.Month, 1, _reporte.ID)
             If aclas.Count = 2 Then
                 Mensaje.Info("Se procesaron " + aclas(0).Rows.Count.ToString + " nuevas clasificaciones")
                 cargar_clasificacion()

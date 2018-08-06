@@ -243,6 +243,16 @@
             End If
         Else
             'entonces es un registro para modificar
+            resultado = base.MOD_FILAS_REPORTE(_fila.ID, _id_reporte, tbCcode.Text, tb_descrip.Text, ck_camb.Checked, val_marco_pinta)
+            If IsNothing(resultado) Then
+                Mensaje.Fallo("Se produjo un error al modificar la fila " + _fila.DESCRIP)
+            Else
+                If resultado.COD_ESTADO < 0 Then
+                    Mensaje.Fallo(resultado.TXT_ESTADO)
+                Else
+                    Mensaje.Info("Se modificó correctamente la linea")
+                End If
+            End If
         End If
     End Sub
 #End Region

@@ -30,6 +30,7 @@ Partial Class mant_clasificacion
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgClasifica = New System.Windows.Forms.DataGridView()
         Me.btn_autoclasificar = New System.Windows.Forms.Button()
+        Me.dtFechaAplica = New System.Windows.Forms.DateTimePicker()
         CType(Me.dgReglas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_add, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_mod, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,17 +104,26 @@ Partial Class mant_clasificacion
         '
         'btn_autoclasificar
         '
-        Me.btn_autoclasificar.Location = New System.Drawing.Point(565, 287)
+        Me.btn_autoclasificar.Location = New System.Drawing.Point(586, 288)
         Me.btn_autoclasificar.Name = "btn_autoclasificar"
         Me.btn_autoclasificar.Size = New System.Drawing.Size(75, 23)
         Me.btn_autoclasificar.TabIndex = 7
         Me.btn_autoclasificar.Text = "Aplicar"
         Me.btn_autoclasificar.UseVisualStyleBackColor = True
         '
+        'dtFechaAplica
+        '
+        Me.dtFechaAplica.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtFechaAplica.Location = New System.Drawing.Point(575, 262)
+        Me.dtFechaAplica.Name = "dtFechaAplica"
+        Me.dtFechaAplica.Size = New System.Drawing.Size(124, 20)
+        Me.dtFechaAplica.TabIndex = 8
+        '
         'mant_clasificacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.dtFechaAplica)
         Me.Controls.Add(Me.btn_autoclasificar)
         Me.Controls.Add(Me.dgClasifica)
         Me.Controls.Add(Me.Label2)
@@ -141,5 +151,6 @@ Partial Class mant_clasificacion
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents dgClasifica As System.Windows.Forms.DataGridView
     Friend WithEvents btn_autoclasificar As System.Windows.Forms.Button
+    Friend WithEvents dtFechaAplica As System.Windows.Forms.DateTimePicker
 
 End Class
