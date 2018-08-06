@@ -78,11 +78,14 @@
         With btn_new
             .Location = New Point(btn_edit.Location.X + btn_edit.Size.Width + 20, DGfilas.Location.Y + DGfilas.Size.Height + 20)
         End With
+        With btn_drop
+            .Location = New Point(btn_new.Location.X + btn_new.Size.Width + 20, DGfilas.Location.Y + DGfilas.Size.Height + 20)
+        End With
     End Sub
 #End Region
 
 #Region "Funciones de los botones"
-    Private Sub modificar_linea(sender As System.Object, e As System.EventArgs) Handles btn_up.Click, btn_edit.Click, btn_down.Click, btn_new.Click
+    Private Sub modificar_linea(sender As System.Object, e As System.EventArgs) Handles btn_up.Click, btn_edit.Click, btn_down.Click, btn_new.Click, btn_drop.Click
         'Checkeos de control respecto a los objetos necesarios
         If Not (TypeOf sender Is Button) Then
             'sender solo debe ser Button para continuar
@@ -178,6 +181,39 @@
                     form_parent = Me.ParentForm
                     form_parent.TVopciones.Enabled = False
                     form_parent.dibujar_fila_nueva_reporte_detalle(_id_reporte)
+                Case "btn_drop"
+                    Dim resultado As dt_query_result.myRow
+                    resultado = base.DROP_FILAS_REPORTE(otra_fila.Cells(0).Value)
+                    If IsNothing(resultado) Then
+                        Mensaje.Fallo("Se produjo un error al eliminar la fila " + otra_fila.Cells(1).Value)
+                        Exit Sub
+                    Else
+                        If resultado.COD_ESTADO < 0 Then
+                            Mensaje.Fallo(resultado.TXT_ESTADO)
+                            Exit Sub
+                        Else
+                            Dim posicion As Integer
+                            posicion = fila.Index
+                            DGfilas.Rows.RemoveAt(posicion)
+                            For i As Integer = posicion To DGfilas.Rows.Count - 1
+                                Dim rec_fila As DataGridViewRow
+                                rec_fila = DGfilas.Rows(i)
+                                resultado = base.MOD_ORDEN_FILA_REPORTE(rec_fila.Cells(0).Value, rec_fila.Cells("Orden").Value - 1)
+                                If IsNothing(resultado) Then
+                                    Mensaje.Fallo("Se produjo un error al cambiar de posición la fila " + rec_fila.Cells(1).Value)
+                                    Exit Sub
+                                Else
+                                    If resultado.COD_ESTADO < 0 Then
+                                        Mensaje.Fallo(resultado.TXT_ESTADO)
+                                        Exit Sub
+                                    Else
+                                        rec_fila.Cells("Orden").Value = rec_fila.Cells("Orden").Value - 1
+                                    End If
+                                End If
+                            Next
+                            Mensaje.Info("Se eliminó correctamente la fila")
+                        End If
+                    End If                    
             End Select
             'Si la fila copiada fue insertada su indice estará entre 0 y la cantidad maxima de filas
             If otra_fila.Index >= 0 Then

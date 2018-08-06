@@ -34,6 +34,7 @@ Partial Class mant_filas_reporte
         Me.btn_down = New System.Windows.Forms.Button()
         Me.btn_edit = New System.Windows.Forms.Button()
         Me.btn_new = New System.Windows.Forms.Button()
+        Me.btn_drop = New System.Windows.Forms.Button()
         CType(Me.DGfilas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -123,7 +124,7 @@ Partial Class mant_filas_reporte
         '
         'btn_edit
         '
-        Me.btn_edit.Location = New System.Drawing.Point(457, 246)
+        Me.btn_edit.Location = New System.Drawing.Point(389, 246)
         Me.btn_edit.Name = "btn_edit"
         Me.btn_edit.Size = New System.Drawing.Size(100, 30)
         Me.btn_edit.TabIndex = 4
@@ -132,17 +133,27 @@ Partial Class mant_filas_reporte
         '
         'btn_new
         '
-        Me.btn_new.Location = New System.Drawing.Point(339, 246)
+        Me.btn_new.Location = New System.Drawing.Point(271, 246)
         Me.btn_new.Name = "btn_new"
         Me.btn_new.Size = New System.Drawing.Size(100, 30)
         Me.btn_new.TabIndex = 5
         Me.btn_new.Text = "Nueva"
         Me.btn_new.UseVisualStyleBackColor = True
         '
+        'btn_drop
+        '
+        Me.btn_drop.Location = New System.Drawing.Point(507, 246)
+        Me.btn_drop.Name = "btn_drop"
+        Me.btn_drop.Size = New System.Drawing.Size(100, 30)
+        Me.btn_drop.TabIndex = 6
+        Me.btn_drop.Text = "Eliminar"
+        Me.btn_drop.UseVisualStyleBackColor = True
+        '
         'mant_filas_reporte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.btn_drop)
         Me.Controls.Add(Me.btn_new)
         Me.Controls.Add(Me.btn_edit)
         Me.Controls.Add(Me.btn_down)
@@ -168,5 +179,6 @@ Partial Class mant_filas_reporte
     Friend WithEvents Cambiar As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents Totalizar As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents Distrib As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents btn_drop As System.Windows.Forms.Button
 
 End Class

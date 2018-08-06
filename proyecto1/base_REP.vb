@@ -438,6 +438,10 @@ Public Class base_REP
             CInt(cambiar).ToString + "," + pintar.ToString
         Return consulta_cambio(_consulta)
     End Function
+    Public Function DROP_FILAS_REPORTE(ByVal indice As Integer) As dt_query_result.myRow
+        _consulta = "EXEC REP_DROP_FILAS_REPORTE " + indice.ToString
+        Return consulta_cambio(_consulta)
+    End Function
 #End Region
 
 #Region "REP_COMP_FILA"
