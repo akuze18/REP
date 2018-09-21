@@ -72,6 +72,7 @@ Public Class form_reporte
                 sel_per = sel_per - 1
             End While
             cbPeriodo.SelectedIndex = 0
+
             op1.Checked = True
         Else
             Mensaje.Fallo(base.estado_desc)
@@ -100,10 +101,16 @@ Public Class form_reporte
             cbPresentacion.Focus()
             Exit Sub
         End If
+        If cbAcum.SelectedIndex < 0 Then
+            Mensaje.Alerta("No ha seleccionado ningun acumulado")
+            cbAcum.Focus()
+            Exit Sub
+        End If
         'Almaceno variables del formulario en variables de clase
         _periodo = cbPeriodo.SelectedItem
         _presentacion = cbPresentacion.SelectedValue
-        _acumulado = Math.Abs(CInt(ckAcum.Checked))
+        Dim sel_acum = CType(cbAcum.SelectedItem, COpciones) '_acumulado = Math.Abs(CInt(ckAcum.Checked))
+        _acumulado = sel_acum.codigo
         For Each elemento As RadioButton In Pcantidad.Controls.OfType(Of RadioButton)()
             If elemento.Checked Then
                 _cantidad = CInt(elemento.Tag)
@@ -157,24 +164,25 @@ Public Class form_reporte
     End Sub
 
     Private Sub cbPresentacion_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbPresentacion.SelectedIndexChanged
+        cbAcum.Items.Clear()
         If cbPresentacion.SelectedIndex >= 0 And cbPresentacion.Enabled Then
             Dim reg_pres As DataRow
             Dim sel_pres As Integer
             sel_pres = cbPresentacion.SelectedValue
             reg_pres = base.presentacion_single(sel_pres)
             If IsNothing(reg_pres) Then
-                ckAcum.Enabled = False
+                cbAcum.Enabled = False
             Else
+                cbAcum.Enabled = True
                 If reg_pres("SOLO_ACUM") = 0 Then
-                    ckAcum.Enabled = True
-                    ckAcum.Checked = False
+                    cbAcum.Items.AddRange(base.tipos_acumulados.ToArray)
                 Else
-                    ckAcum.Enabled = False
-                    ckAcum.Checked = True
+                    cbAcum.Items.AddRange(base.tipos_acumulados(True).ToArray)
                 End If
+                cbAcum.SelectedIndex = 0
             End If
         Else
-            ckAcum.Enabled = False
+            cbAcum.Enabled = False
         End If
     End Sub
 

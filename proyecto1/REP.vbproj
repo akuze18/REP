@@ -117,6 +117,7 @@
     <Compile Include="Componente\opciones_fecha.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Modelos\COpciones.vb" />
     <Compile Include="Modelos\dt_columnas.vb">
       <SubType>Component</SubType>
     </Compile>

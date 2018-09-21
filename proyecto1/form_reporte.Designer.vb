@@ -35,8 +35,8 @@ Partial Class form_reporte
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cbPresentacion = New System.Windows.Forms.ComboBox()
-        Me.ckAcum = New System.Windows.Forms.CheckBox()
         Me.hiloSegundoPlano = New System.ComponentModel.BackgroundWorker()
+        Me.cbAcum = New System.Windows.Forms.ComboBox()
         Me.Pcantidad.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -163,25 +163,25 @@ Partial Class form_reporte
         Me.cbPresentacion.Size = New System.Drawing.Size(258, 21)
         Me.cbPresentacion.TabIndex = 15
         '
-        'ckAcum
-        '
-        Me.ckAcum.AutoSize = True
-        Me.ckAcum.Location = New System.Drawing.Point(178, 158)
-        Me.ckAcum.Name = "ckAcum"
-        Me.ckAcum.Size = New System.Drawing.Size(15, 14)
-        Me.ckAcum.TabIndex = 16
-        Me.ckAcum.UseVisualStyleBackColor = True
-        '
         'hiloSegundoPlano
         '
         Me.hiloSegundoPlano.WorkerReportsProgress = True
+        '
+        'cbAcum
+        '
+        Me.cbAcum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbAcum.FormattingEnabled = True
+        Me.cbAcum.Location = New System.Drawing.Point(178, 155)
+        Me.cbAcum.Name = "cbAcum"
+        Me.cbAcum.Size = New System.Drawing.Size(258, 21)
+        Me.cbAcum.TabIndex = 17
         '
         'form_reporte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(471, 339)
-        Me.Controls.Add(Me.ckAcum)
+        Me.Controls.Add(Me.cbAcum)
         Me.Controls.Add(Me.cbPresentacion)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -214,6 +214,6 @@ Partial Class form_reporte
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents cbPresentacion As System.Windows.Forms.ComboBox
-    Friend WithEvents ckAcum As System.Windows.Forms.CheckBox
     Friend WithEvents hiloSegundoPlano As System.ComponentModel.BackgroundWorker
+    Friend WithEvents cbAcum As System.Windows.Forms.ComboBox
 End Class

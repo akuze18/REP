@@ -94,7 +94,15 @@ Public Class base_REP
         tabla.Columns.Add("Valor", Type.GetType("System.Double"))
         Return tabla
     End Function
-
+    Public Function tipos_acumulados(Optional ByVal onlyAcum As Boolean = False) As List(Of COpciones)
+        Dim result = New List(Of COpciones)
+        If Not onlyAcum Then
+            result.Add(New COpciones(0, "Solo Mes"))
+        End If
+        result.Add(New COpciones(1, "Año Normal"))
+        result.Add(New COpciones(2, "Año Japones"))
+        Return result
+    End Function
 #End Region
 
 #Region "Codigo Unico para la clase"
