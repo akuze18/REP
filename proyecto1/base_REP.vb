@@ -170,8 +170,8 @@ Public Class base_REP
         Next
         Return tablas
     End Function
-    Public Function REPORTE_MES(ByVal id_vista As Integer, ByVal año As Integer, ByVal mes As Integer, ByVal cantidad As Integer) As DataTable()
-        _consulta = "EXEC REP_MESES " + id_vista.ToString + "," + año.ToString + "," + mes.ToString
+    Public Function REPORTE_MES(ByVal id_vista As Integer, ByVal año As Integer, ByVal mes As Integer, ByVal acumulado As Integer, ByVal cantidad As Integer) As DataTable()
+        _consulta = "EXEC REP_MESES " + id_vista.ToString + "," + año.ToString + "," + mes.ToString + "," + acumulado.ToString
         Dim tablas As DataTable()
         tablas = maestro.execute(_consulta)
         For Each tabla As DataTable In tablas
@@ -213,8 +213,8 @@ Public Class base_REP
         _consulta = "SELECT * FROM REP_detalle(" + id_reporte.ToString + "," + año.ToString + "," + mes.ToString + "," + acumulado.ToString + ")"
         Return maestro.execute(_consulta)
     End Function
-    Public Function REPORTE_COMPARATIVO(ByVal id_vista As Integer, ByVal año As Integer, ByVal mes As Integer, ByVal cantidad As Integer) As DataTable()
-        _consulta = "EXEC REP_COMPARATIVO " + id_vista.ToString + "," + año.ToString + "," + mes.ToString
+    Public Function REPORTE_COMPARATIVO(ByVal id_vista As Integer, ByVal año As Integer, ByVal mes As Integer, ByVal acumulado As Integer, ByVal cantidad As Integer) As DataTable()
+        _consulta = "EXEC REP_COMPARATIVO " + id_vista.ToString + "," + año.ToString + "," + mes.ToString + "," + acumulado.ToString
         Dim tablas As DataTable()
         tablas = maestro.execute(_consulta)
         For Each tabla As DataTable In tablas
@@ -283,8 +283,8 @@ Public Class base_REP
         Next
         Return tablas
     End Function
-    Public Function REPORTE_COMPARATIVO_JP(ByVal id_vista As Integer, ByVal año As Integer, ByVal mes As Integer, ByVal cantidad As Integer) As DataTable()
-        _consulta = "EXEC REP_COMPARATIVO_JP " + id_vista.ToString + "," + año.ToString + "," + mes.ToString
+    Public Function REPORTE_COMPARATIVO_JP(ByVal id_vista As Integer, ByVal año As Integer, ByVal mes As Integer, ByVal acumulado As Integer, ByVal cantidad As Integer) As DataTable()
+        _consulta = "EXEC REP_COMPARATIVO_JP " + id_vista.ToString + "," + año.ToString + "," + mes.ToString + "," + acumulado.ToString
         Dim tablas As DataTable()
         tablas = maestro.execute(_consulta)
         For Each tabla As DataTable In tablas

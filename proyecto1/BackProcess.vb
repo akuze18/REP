@@ -102,15 +102,15 @@ Public Class BackProcess
             Case 1
                 tabla = _base.REPORTE_RESUMEN(_int_vars(0), _fecha1.Year, _fecha1.Month, _int_vars(1), _int_vars(2))
             Case 2
-                tabla = _base.REPORTE_MES(_int_vars(0), _fecha1.Year, _fecha1.Month, _int_vars(2))
+                tabla = _base.REPORTE_MES(_int_vars(0), _fecha1.Year, _fecha1.Month, _int_vars(1), _int_vars(2))
             Case 3
                 tabla = _base.REPORTE_DETALLE(_int_vars(4), _fecha1.Year, _fecha1.Month, _int_vars(1))
             Case 4
-                tabla = _base.REPORTE_COMPARATIVO(_int_vars(0), _fecha1.Year, _fecha1.Month, _int_vars(2))
+                tabla = _base.REPORTE_COMPARATIVO(_int_vars(0), _fecha1.Year, _fecha1.Month, _int_vars(1), _int_vars(2))
             Case 5
                 tabla = _base.REPORTE_RESUMEN_JP(_int_vars(0), _fecha1.Year, _fecha1.Month, _int_vars(1), _int_vars(2))
             Case 7
-                tabla = _base.REPORTE_COMPARATIVO_JP(_int_vars(0), _fecha1.Year, _fecha1.Month, _int_vars(2))
+                tabla = _base.REPORTE_COMPARATIVO_JP(_int_vars(0), _fecha1.Year, _fecha1.Month, _int_vars(1), _int_vars(2))
             Case 8
                 tabla = _base.REPORTE_RESUMEN_COMPARATIVO(_int_vars(0), _fecha1.Year, _fecha1.Month, _int_vars(1), _int_vars(2))
             Case Else   'CASE 3
